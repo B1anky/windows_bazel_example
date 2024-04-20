@@ -24,7 +24,7 @@ To begin you should do the following:
 3. Now it's time to install an editor. I advise Visual Studio Code (VS Code) since it has simple git integration, a myriad of terminal options, and a decent extension library.
     - This can be downloaded via this [link](https://code.visualstudio.com/).
 4. After you have your preferred editing environment set up, you need to download `bazel` itself. You can either install `bazelisk` or just get the `bazel.exe` and put it in your MinGW install bin.
-   - To download `bazel.exe` navigate to this [link](bazel-7.1.1-windows-x86_64.exe).
+   - To download `bazel.exe` navigate to this [bazel-7.1.1-windows-x86_64.exe](https://github.com/bazelbuild/bazel/releases/download/7.1.1/bazel-7.1.1-windows-x86_64.exe).
        - You may need to scroll down the page a little bit until you see the group titled `Assets`.
            - You may also need to expand the `Assets` to show all of them to see the one needed for windows. Select the `Show all ## Assets` link to expand.
            - Scroll down until you see the option for: `bazel-7.1.1-windows-x86_64.exe` (or whichever version is the most recent).
