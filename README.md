@@ -29,7 +29,7 @@ To begin you should do the following:
            - You may also need to expand the `Assets` to show all of them to see the one needed for windows. Select the `Show all ## Assets` link to expand.
            - Scroll down until you see the option for: `bazel-7.1.1-windows-x86_64.exe` (or whichever version is the most recent).
                - Select it, download it, and install it by moving it into your MinGW directory that you installed to before. There is no need to execute it to install it.
-5. Clone this repository and update the any paths referenced inside of `toolchain\cc_toolchain_config.bzl`.
+5. Clone this repository and update any paths referenced inside of `toolchain\cc_toolchain_config.bzl`.
     - Specifically, update the `MINGW_PATH` and the `MINGW_VERSION` variables with your local host information.
 6. Open a terminal and navigate to the directory for this git repo.
 7. Execute the following command:
