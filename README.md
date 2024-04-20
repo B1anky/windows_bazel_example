@@ -33,6 +33,6 @@ To begin you should do the following:
     - Specifically, update the `MINGW_PATH` and the `MINGW_VERSION` variables with your local host information.
 6. Open a terminal and navigate to the directory for this git repo.
 7. Execute the following command:
-    - `bazel run :hello_world"`
+    - `bazel run :hello_world`
     - If it executes properly, you should see in the terminal a print out of a number corresponding to your g++ version.
 8. To modify your g++ C++ std version, open the `.bazelrc` and update the `--cxxopt=-std=c++20` version to whatever you want or need.
