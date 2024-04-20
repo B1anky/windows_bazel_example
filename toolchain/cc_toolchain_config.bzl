@@ -1,4 +1,3 @@
-
 load("@bazel_tools//tools/build_defs/cc:action_names.bzl", "ACTION_NAMES")
 
 load(
@@ -19,39 +18,48 @@ all_link_actions = [
    ACTION_NAMES.cpp_link_nodeps_dynamic_library,
 ]
 
+# Defines your MinGW path variable.
+# Update this with your install path for MinGW.
+MINGW_PATH = "F:/MinGW/mingw64"
+
+# Inside your MinGW install there should be some versioning
+# under the /lib/gcc/x86_64-w64-mingw32/... folders.
+# Replace this function return with the numerical values.
+MINGW_VERSION = "13.2.0"
+
 def _impl(ctx):
    tool_paths = [
        tool_path(
            name = "gcc",
-           path = "F:/MinGW/mingw64/bin/g++",
+           path = MINGW_PATH + "/bin/g++",
        ),
        tool_path(
            name = "ld",
-           path = "F:/MinGW/mingw64/bin/ld",
+           path = MINGW_PATH + "/bin/ld",
        ),
        tool_path(
            name = "ar",
-           path = "F:/MinGW/mingw64/bin/ar",
+           path = MINGW_PATH + "/bin/ar",
        ),
        tool_path(
            name = "cpp",
-           path = "F:/MinGW/mingw64/bin/cpp",
+           path = MINGW_PATH + "/bin/cpp",
        ),
        tool_path(
            name = "gcov",
-           path = "F:/MinGW/mingw64/bin/gcov",
+           path = MINGW_PATH + "/bin/gcov",
        ),
        tool_path(
            name = "nm",
-           path = "F:/MinGW/mingw64/bin/nm",
+           path = MINGW_PATH + "/bin/nm",
        ),
        tool_path(
            name = "objdump",
-           path = "F:/MinGW/mingw64/bin/objdump",
+           path = MINGW_PATH + "/bin/objdump",
        ),
        tool_path(
            name = "strip",
-           path = "F:/MinGW/mingw64/bin/strip",
+           path = MINGW_PATH + "/bin/strip",
        ),
    ]
 
@@ -78,11 +86,11 @@ def _impl(ctx):
        ctx = ctx,
        features = features,
        cxx_builtin_include_directories = [
-           "F:/MinGW/mingw64/include",
-           "F:/MinGW/mingw64/x86_64-w64-mingw32/include",
-           "F:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed",
-           "F:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
-           "F:/MinGW/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0",
+           MINGW_PATH + "/include",
+           MINGW_PATH + "/x86_64-w64-mingw32/include",
+           MINGW_PATH + "/lib/gcc/x86_64-w64-mingw32/" + MINGW_VERSION + "/include-fixed",
+           MINGW_PATH + "/lib/gcc/x86_64-w64-mingw32/" + MINGW_VERSION + "/include",
+           MINGW_PATH + "/lib/gcc/x86_64-w64-mingw32/" + MINGW_VERSION,
        ],
        toolchain_identifier = "local",
        host_system_name = "local",
